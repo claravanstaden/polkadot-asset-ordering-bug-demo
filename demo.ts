@@ -255,14 +255,13 @@ async function demonstrateAssetOrderingBug() {
     const api = await ApiPromise.create({ provider })
 
     const testAccount = "0x460411e07f93dc4bc2b3a6cb67dad89ca26e8a54054d13916f74c982595c2e0e"
-    const amount = "200000000000000"
-    const fee = "29876830"
+    const amount = "50000000000"
 
     // Test WUD asset ordering
-    await testAssetOrdering(api, WUD_ASSET, testAccount, amount, fee)
+    await testAssetOrdering(api, WUD_ASSET, testAccount, amount, "29876830")
 
     // Test KSM asset ordering
-    await testAssetOrdering(api, KSM_ASSET, testAccount, amount, fee)
+    await testAssetOrdering(api, KSM_ASSET, testAccount, amount, "18718740000")
 
     await api.disconnect()
 
